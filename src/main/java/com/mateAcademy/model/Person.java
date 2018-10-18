@@ -1,4 +1,7 @@
 package com.mateAcademy.model;
 
-public class Person {
+abstract class Person {
+  private String type;
+  private String name;
+  private String lastName;
 }

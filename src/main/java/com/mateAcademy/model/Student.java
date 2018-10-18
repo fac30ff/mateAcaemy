@@ -1,4 +1,4 @@
 package com.mateAcademy.model;
 
-public class Student {
+public class Student extends Person {
 }
