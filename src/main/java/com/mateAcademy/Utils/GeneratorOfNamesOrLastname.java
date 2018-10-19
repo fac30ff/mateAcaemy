@@ -12,9 +12,9 @@ public class GeneratorOfNamesOrLastname {
 
   private static SecureRandom sr = new SecureRandom();
 
-  public static String generatorOfFullname(int length) {
+  public String generatorOfFullname(int length) {
     StringBuilder sb = new StringBuilder(length);
-    for( int i = 0; i < length; i++ ) {
+    for( int i = 0; i < length; i++) {
       sb.append( nameOrSurname.charAt(sr.nextInt(nameOrSurname.length())));
     }
     return sb.toString();

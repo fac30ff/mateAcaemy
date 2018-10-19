@@ -46,7 +46,17 @@ public class Group {
   }
 
   public void setHeadmanToGroup(final List<Student> students) {
-    this.headman;
-    Map<String, Integer> countMap = new HashMap<>();
+    int counter = 0;
+    Map<String, Integer> tempMap = new HashMap<>();
+    tempMap.forEach(
+        students
+        .stream()
+        .forEach(e -> {
+          if (!e.getFullName().equals(tempMap.get(e.getFullName()))) {
+            tempMap.put(e.getFullName(), counter);
+          }
+        });
+        tempMap.clear();
+    )
   }
 }
