@@ -7,7 +7,6 @@ import java.util.Map;
 public class Group {
   private String name;
   private Student headman;
-  private List<Professor> professors;
   private List<Student> students;
 
   public Group(String name, List<Student> students) {
@@ -15,16 +14,10 @@ public class Group {
     this.students = students;
   }
 
-  public Group(String name, List<Professor> professors, List<Student> students) {
-    this.name = name;
-    this.professors = professors;
-    this.students = students;
-  }
 
-  public Group(String name, Student headman, List<Professor> professors, List<Student> students) {
+  public Group(String name, Student headman, List<Student> students) {
     this.name = name;
     this.headman = headman;
-    this.professors = professors;
     this.students = students;
   }
 
@@ -42,14 +35,6 @@ public class Group {
 
   public void setHeadman(Student headman) {
     this.headman = headman;
-  }
-
-  public List<Professor> getProfessors() {
-    return professors;
-  }
-
-  public void setProfessors(List<Professor> professors) {
-    this.professors = professors;
   }
 
   public List<Student> getStudents() {
