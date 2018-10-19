@@ -1,8 +1,11 @@
 package com.mateAcademy.model;
 
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Group {
   private String name;
@@ -46,17 +49,8 @@ public class Group {
   }
 
   public void setHeadmanToGroup(final List<Student> students) {
-    int counter = 0;
-    Map<String, Integer> tempMap = new HashMap<>();
-    tempMap.forEach(
-        students
-        .stream()
-        .forEach(e -> {
-          if (!e.getFullName().equals(tempMap.get(e.getFullName()))) {
-            tempMap.put(e.getFullName(), counter);
-          }
-        });
-        tempMap.clear();
-    )
+    this.headman = Collections.max(students.stream().map(s -> s.voteForHeadmanOfGroup(students))
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+            .entrySet(), Comparator.comparingLong(Map.Entry::getValue)).getKey();
   }
 }

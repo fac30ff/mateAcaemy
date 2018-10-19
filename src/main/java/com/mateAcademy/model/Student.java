@@ -28,9 +28,9 @@ public class Student extends Person implements Voteable{
   }
 
   @Override
-  public String voteForHeadmanOfGroup(final List<Student> students) {
+  public Student voteForHeadmanOfGroup(final List<Student> students) {
     return students.stream().min(Comparator.comparingDouble(s -> getAverageCharacteristics(s.getCharacteristics())))
-        .get().getFullName();
+        .get();
   }
 
   private Double getAverageCharacteristics(final Map<Сharacteristic, Integer> characteristics) {

@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface Voteable {
 
-  String voteForHeadmanOfGroup(List<Student> students);
+  Student voteForHeadmanOfGroup(List<Student> students);
 
 }
