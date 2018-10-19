@@ -6,7 +6,7 @@ public class Professor extends Person implements Checkable{
 
   private List<Group> groups;
 
-  Professor(String name, String lastName) {
+  public Professor(String name, String lastName) {
     super(name, lastName);
   }
 

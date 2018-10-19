@@ -1,13 +1,11 @@
 package com.mateAcademy.Utils;
 
-import com.mateAcademy.constant.Сharacteristic;
 import com.mateAcademy.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class GenerateListOfStudents {
+public class GenerateListOfStudents implements GeneralGenerator {
 
   private List<Student> students = new ArrayList<>();
   private GeneratorOfNamesOrLastname generatorOfNamesOrLastname = new GeneratorOfNamesOrLastname();
@@ -24,14 +22,9 @@ public class GenerateListOfStudents {
   private void addStudentsToList(int number) {
     for (int i = 0; i < number; i++) {
       this.students.add(new Student(generatorOfNamesOrLastname.generatorOfFullname(i),
-          generatorOfNamesOrLastname.generatorOfFullname(number - i),
+          generatorOfNamesOrLastname.generatorOfFullname(number - i), generateCharacteristics()
           ));
     }
   }
-
-  private Map<Сharacteristic, Integer> generateCharacteristics() {
-
-  }
-
 
 }
