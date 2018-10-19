@@ -2,6 +2,7 @@
 .idea
 
 mate-academy.iml
+*.iml
 
 /out
 out
