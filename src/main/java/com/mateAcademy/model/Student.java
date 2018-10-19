@@ -40,12 +40,12 @@ public class Student extends Person implements Voteable{
 
 
   @Override
-  public String voteForHeadmanOfGroup(List<Student> students) {
+  public String voteForHeadmanOfGroup(final List<Student> students) {
     return students.stream().min(Comparator.comparingDouble(s -> getAverageCharacteristics(s.getCharacteristics())))
         .get().getFullName();
   }
 
-  private Double getAverageCharacteristics(Map<Сharacteristic, Integer> characteristics) {
+  private Double getAverageCharacteristics(final Map<Сharacteristic, Integer> characteristics) {
     return characteristics.values().stream().mapToDouble(Number::doubleValue).average().getAsDouble();
   }
 

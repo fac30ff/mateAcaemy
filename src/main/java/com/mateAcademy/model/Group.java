@@ -1,6 +1,8 @@
 package com.mateAcademy.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Group {
   private String name;
@@ -58,7 +60,8 @@ public class Group {
     this.students = students;
   }
 
-  public void setHeadmanToGroup(List<Student> students) {
-    students.forEach(e -> e.voteForHeadmanOfGroup(students));
+  public void setHeadmanToGroup(final List<Student> students) {
+    this.headman;
+    Map<String, Integer> countMap = new HashMap<>();
   }
 }

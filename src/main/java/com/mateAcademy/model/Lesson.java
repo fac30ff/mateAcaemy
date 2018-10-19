@@ -40,7 +40,7 @@ public class Lesson {
     return presentOfStudents;
   }
 
-  public void setPresentOfStudents(Group group) {
+  public void setPresentOfStudents(final Group group) {
     this.presentOfStudents = group.getStudents()
         .stream()
         .collect(Collectors.toMap(Student::getFullName, s -> setRandomPresenceOfStudent()));
