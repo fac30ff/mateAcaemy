@@ -2,6 +2,8 @@ package com.mateAcademy.model;
 
 import com.mateAcademy.constant.Сharacteristic;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 
 public class Student extends Person implements Voteable{
@@ -38,8 +40,13 @@ public class Student extends Person implements Voteable{
 
 
   @Override
-  public void voteForHeadmanOfGroup() {
+  public String voteForHeadmanOfGroup(List<Student> students) {
+    return students.stream().min(Comparator.comparingDouble(s -> getAverageCharacteristics(s.getCharacteristics())))
+        .get().getFullName();
+  }
 
+  private Double getAverageCharacteristics(Map<Сharacteristic, Integer> characteristics) {
+    return characteristics.values().stream().mapToDouble(Number::doubleValue).average().getAsDouble();
   }
 
   @Override

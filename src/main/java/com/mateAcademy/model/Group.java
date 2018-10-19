@@ -57,4 +57,8 @@ public class Group {
   public void setStudents(List<Student> students) {
     this.students = students;
   }
+
+  public void setHeadmanToGroup(List<Student> students) {
+    students.forEach(e -> e.voteForHeadmanOfGroup(students));
+  }
 }

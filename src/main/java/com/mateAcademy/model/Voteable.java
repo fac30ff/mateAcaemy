@@ -1,6 +1,9 @@
 package com.mateAcademy.model;
 
+import java.util.List;
+
 public interface Voteable {
 
-  void voteForHeadmanOfGroup();
+  String voteForHeadmanOfGroup(List<Student> students);
+
 }

@@ -41,11 +41,12 @@ public class Lesson {
   }
 
   public void setPresentOfStudents(Group group) {
-    this.presentOfStudents = group.getStudents().stream()
-    .collect(Collectors.toMap(Student::getFullName, setPresenceOfStudent());
+    this.presentOfStudents = group.getStudents()
+        .stream()
+        .collect(Collectors.toMap(Student::getFullName, s -> setRandomPresenceOfStudent()));
   }
 
-  private boolean setPresenceOfStudent() {
+  private boolean setRandomPresenceOfStudent() {
     Random r = new Random();
     return r.nextBoolean();
   }
